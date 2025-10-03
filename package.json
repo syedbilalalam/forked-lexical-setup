@@ -8,10 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.27.0",
     "@excalidraw/excalidraw": "^0.18.0",
     "@lexical/clipboard": "0.35.0",
     "@lexical/code": "0.35.0",
     "@lexical/code-shiki": "0.35.0",
+    "@lexical/dragon": "0.35.0",
     "@lexical/file": "0.35.0",
     "@lexical/hashtag": "0.35.0",
     "@lexical/link": "0.35.0",
@@ -31,7 +33,7 @@
     "prettier": "^3.6.2",
     "react": "^18.2.0",
     "react-day-picker": "^9.7.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-error-boundary": "^3.1.4",
     "y-websocket": "^1.5.4",
     "yjs": ">=13.5.42"
@@ -43,8 +45,11 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@types/lodash-es": "^4.14.182",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "rollup-plugin-copy": "^3.5.0",
+    "typescript": "^5.9.3",
     "vite": "^5.2.11",
     "vite-plugin-static-copy": "^2.3.0"
   }
