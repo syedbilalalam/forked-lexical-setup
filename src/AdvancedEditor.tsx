@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import type { JSX } from 'react';
+import { useState, useEffect } from 'react';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { ContentEditable } from '@lexical/react/LexicalContentEditable';
@@ -252,7 +253,7 @@ export default function AdvancedEditor({
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <div className="editor-container">
-        {isRichText && <SimpleToolbar />}
+        isRichText && <SimpleToolbar />
         <div className={`editor-container ${showTreeView ? 'tree-view' : ''} ${!isRichText ? 'plain-text' : ''}`}>
           <AutoFocusPlugin />
           {selectionAlwaysOnDisplay && <SelectionAlwaysOnDisplay />}
@@ -265,7 +266,7 @@ export default function AdvancedEditor({
                 contentEditable={
                   <div className="editor-scroller">
                     <div className="editor" ref={onRef}>
-                      <ContentEditable placeholder={placeholder} />
+                      <ContentEditable data-placeholder={placeholder} />
                     </div>
                   </div>
                 }
@@ -279,7 +280,13 @@ export default function AdvancedEditor({
                 hasCellBackgroundColor={tableCellBackgroundColor}
                 hasHorizontalScroll={tableHorizontalScroll}
               />
-              <LinkPlugin hasLinkAttributes={hasLinkAttributes} />
+              {
+                hasLinkAttributes ? (
+                  <LinkPlugin />
+                ): (
+                  <></>
+                )
+              }
               <HashtagPlugin />
               <ClickableLinkPlugin disabled={isEditable} />
               <HorizontalRulePlugin />
@@ -288,7 +295,7 @@ export default function AdvancedEditor({
           ) : (
             <>
               <PlainTextPlugin
-                contentEditable={<ContentEditable placeholder={placeholder} />}
+                contentEditable={<ContentEditable data-placeholder={placeholder} />}
                 ErrorBoundary={LexicalErrorBoundary}
               />
               <HistoryPlugin />

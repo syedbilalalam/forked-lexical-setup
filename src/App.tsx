@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BasicEditor from './BasicEditor';
-import AdvancedEditor from './AdvancedEditor';
+// import AdvancedEditor from './AdvancedEditor';
 import './App.css';
 
 function App() {
@@ -131,7 +131,7 @@ function App() {
               </div>
             </div>
             
-            <AdvancedEditor {...settings} />
+            {/* <AdvancedEditor {...settings} /> */}
           </div>
         )}
       </main>
